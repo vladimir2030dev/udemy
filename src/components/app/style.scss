@@ -1,0 +1,20 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+
+.todo-list {
+  padding: 12px 30px;
+}
+
+.btn-list {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.important  {
+  font-weight: bold;
+  color: darkred;
+}
