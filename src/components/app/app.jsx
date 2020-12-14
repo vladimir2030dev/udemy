@@ -82,7 +82,7 @@ export default class App extends Component {
     });
   };
 
-  onSeacrhChange = (term) => {
+  onSearchChange = (term) => {
     this.setState( {term} );
   };
 
@@ -100,9 +100,7 @@ export default class App extends Component {
   render() {
 
     const { todoData,  term } = this.state;
-
     const visibleItem = this.search(todoData, term);
-
     const doneCount = todoData.filter((el) => el.done).length;
     const todoCount = todoData.length - doneCount;
     const importantCount = todoData.filter((el) => el.important).length;
@@ -115,7 +113,7 @@ export default class App extends Component {
           sumImportant = { importantCount }
         />
         <SearchPanel
-          onSeacrhChange = {this.onSeacrhChange}
+            onSearchChange = {this.onSearchChange}
         />
         <TodoList
           todos = {todoData}
