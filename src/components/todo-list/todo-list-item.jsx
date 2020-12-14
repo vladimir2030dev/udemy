@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 export default class TodoListItem extends Component {
 
-  constructor() {
+/*  constructor() {
     super();
     this.state = {
       done: false,
@@ -22,12 +22,17 @@ export default class TodoListItem extends Component {
         }
       });
     };
-  }
+  }*/
 
   render() {
 
-    const { label, onDeleted } = this.props;
-    const { done, important } = this.state;
+    const { label, onDeleted,
+      onToggleImportant,
+      onToggleDone,
+      important,
+      done
+    } = this.props;
+
     let className = 'todo-list-item';
     if (done) {
       className += ' done';
@@ -41,7 +46,7 @@ export default class TodoListItem extends Component {
         <div>
           <span
               className={className}
-              onClick={this.onLabelClick}
+              onClick={onToggleDone}
           >
            {label}
           </span>
@@ -54,7 +59,7 @@ export default class TodoListItem extends Component {
             <button
                 type="button"
                 className="btn btn-outline-primary"
-                onClick={this.onImportnant}
+                onClick={onToggleImportant}
             >Важное
             </button>
           </div>
